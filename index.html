@@ -2,619 +2,137 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2 Meses - Iago & Tati</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Fora do Ar</title>
     <style>
-        :root {
-            --rosa-claro: #ffebee;
-            --rosa-medio: #ff6b8b;
-            --rosa-escuro: #ff3e6c;
-            --texto: #333333;
-            --branco: #ffffff;
-        }
-        
-        * {
-            box-sizing: border-box;
+        body {
             margin: 0;
             padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--rosa-claro);
-            color: var(--texto);
-            overflow-x: hidden;
-            touch-action: manipulation;
-            -webkit-text-size-adjust: 100%;
-            min-height: 100vh;
-        }
-        
-        .page-container {
-            width: 100vw;
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Header expansivo */
-        .hero-header {
-            width: 100%;
-            height: 100vh;
-            background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-escuro));
+            background-color: #000;
+            color: #0ff;
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            color: var(--branco);
-            padding: 20px;
-            position: relative;
+            height: 100vh;
             overflow: hidden;
+            text-align: center;
         }
-        
-        .hero-header::before {
-            content: "";
+
+        .glitch {
+            font-size: 5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                0.025em 0.04em 0 #fffc00;
+            animation: glitch 725ms infinite;
+        }
+
+        .glitch span {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>') bottom center no-repeat;
-            background-size: 100% 20%;
         }
-        
-        .main-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s 0.3s forwards;
+
+        .glitch span:first-child {
+            animation: glitch 500ms infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-0.04em, -0.03em);
+            opacity: 0.75;
         }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s 0.5s forwards;
+
+        .glitch span:last-child {
+            animation: glitch 375ms infinite;
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(0.04em, 0.03em);
+            opacity: 0.75;
         }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Foto de perfil animada */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid var(--branco);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin: 20px auto;
-            background: linear-gradient(135deg, #ffccd5, var(--rosa-medio));
-            color: var(--branco);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            opacity: 0;
-            transform: scale(0.8);
-            animation: popIn 0.6s 0.8s forwards;
-            position: relative;
-            z-index: 2;
-        }
-        
-        @keyframes popIn {
+
+        @keyframes glitch {
             0% {
-                opacity: 0;
-                transform: scale(0.8);
+                text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                    0.025em 0.04em 0 #fffc00;
+            }
+            15% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                    0.025em 0.04em 0 #fffc00;
+            }
+            16% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                    -0.05em -0.05em 0 #fffc00;
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                    -0.05em -0.05em 0 #fffc00;
             }
             50% {
-                transform: scale(1.1);
+                text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                    0 -0.04em 0 #fffc00;
+            }
+            99% {
+                text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                    0 -0.04em 0 #fffc00;
             }
             100% {
-                opacity: 1;
-                transform: scale(1);
+                text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                    -0.04em -0.025em 0 #fffc00;
             }
         }
-        
-        /* CONTADOR DE TEMPO INTEGRADO */
-        .love-timer {
-            background: var(--branco);
-            border-radius: 18px;
-            padding: 18px;
-            margin: 0 auto 25px;
-            width: 92%;
-            max-width: 380px;
-            box-shadow: 0 8px 25px rgba(255, 107, 139, 0.15);
-            border: 1px solid rgba(255, 107, 139, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s 1s forwards;
-        }
-        
-        .time-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-        }
-        
-        .time-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--rosa-escuro);
-            font-family: 'Courier New', monospace;
-            line-height: 1;
-            margin-bottom: 3px;
-        }
-        
-        .time-label {
-            font-size: 0.65rem;
-            color: var(--rosa-medio);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-        
-        .time-separator {
-            color: var(--rosa-medio);
-            font-weight: bold;
-            font-size: 1.2rem;
-            padding: 0 2px;
-            margin-top: -8px;
-        }
-        
-        .start-date {
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--rosa-medio);
-            margin-top: -15px;
-            margin-bottom: 20px;
-            opacity: 0.8;
-            animation: fadeIn 1s 1.2s forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 0.8; }
-        }
-        
-        /* Linha do tempo vertical */
-        .timeline-section {
-            padding: 30px 20px;
-            background: var(--branco);
-        }
-        
-        .timeline-title {
-            font-size: 1.5rem;
-            color: var(--rosa-escuro);
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 600;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin: 0 auto;
-            max-width: 400px;
-        }
-        
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--rosa-medio), var(--rosa-escuro));
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .timeline-date {
-            position: absolute;
-            left: -30px;
-            top: 0;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: var(--rosa-escuro);
-            color: var(--branco);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: bold;
-            box-shadow: 0 0 0 4px var(--rosa-claro);
-        }
-        
-        .timeline-content {
-            background: var(--rosa-claro);
-            padding: 15px;
-            border-radius: 0 15px 15px 15px;
-            position: relative;
-            margin-left: 15px;
-        }
-        
-        .timeline-content::before {
-            content: "";
-            position: absolute;
-            left: -10px;
-            top: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 10px 10px 0;
-            border-color: transparent var(--rosa-claro) transparent transparent;
-        }
-        
-        /* Mensagem expansiva */
-        .message-section {
-            padding: 40px 20px;
-            background: linear-gradient(135deg, var(--rosa-claro), var(--branco));
-            position: relative;
-        }
-        
-        .message-container {
-            background: var(--branco);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(255,107,139,0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .message-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--rosa-medio), var(--rosa-escuro));
-        }
-        
-        .message-text {
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-        
-        .message-text p {
-            margin-bottom: 15px;
-        }
-        
-        .highlight {
-            color: var(--rosa-escuro);
-            font-weight: 600;
-        }
-        
-        .growth-text {
-            background: rgba(255,107,139,0.1);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid var(--rosa-escuro);
-            margin: 20px 0;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .growth-text::after {
-            content: """;
-            position: absolute;
-            bottom: 5px;
-            right: 10px;
-            font-size: 2rem;
-            color: rgba(255,107,139,0.2);
-        }
-        
-        .signature {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 2rem;
-            text-align: right;
-            color: var(--rosa-escuro);
-            margin-top: 20px;
-        }
-        
-        /* Footer flutuante */
-        .footer {
-            padding: 20px;
-            text-align: center;
-            color: var(--rosa-escuro);
-            font-size: 0.8rem;
-            background: var(--branco);
-        }
-        
-        /* Elementos interativos */
-        .floating-hearts {
+
+        .scanlines {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: linear-gradient(
+                    to bottom,
+                    rgba(0, 255, 255, 0.1) 0%,
+                    rgba(0, 255, 255, 0.1) 50%,
+                    transparent 50%
+                ),
+                transparent;
+            background-size: 100% 4px;
             pointer-events: none;
-            z-index: -1;
+            z-index: 1000;
         }
-        
-        .heart-particle {
-            position: absolute;
-            color: var(--rosa-medio);
-            animation: float linear infinite;
-            opacity: 0.6;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            20% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-20vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Efeito de parallax */
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle fill="rgba(255,255,255,0.2)" cx="20" cy="20" r="5"/><circle fill="rgba(255,255,255,0.2)" cx="50" cy="50" r="7"/><circle fill="rgba(255,255,255,0.2)" cx="80" cy="30" r="4"/></svg>');
-            background-size: 30%;
-            opacity: 0.3;
-            z-index: 1;
-        }
-        
-        /* Botão de interação */
-        .love-button {
+
+        .credits {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--rosa-escuro);
-            color: var(--branco);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 20px rgba(255,62,108,0.5);
-            border: none;
-            z-index: 10;
-            cursor: pointer;
-            animation: pulse 2s infinite;
+            bottom: 20px;
+            color: #0ff;
+            font-size: 1rem;
+            opacity: 0.7;
+            animation: flicker 3s infinite alternate;
         }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 0.7;
+                text-shadow: 0 0 5px #0ff;
+            }
+            20%, 24%, 55% {
+                opacity: 0.2;
+                text-shadow: none;
+            }
         }
-        
-        /* Responsividade adicional */
-        @media (max-width: 400px) {
-            .main-title {
-                font-size: 2.2rem;
-            }
-            .subtitle {
-                font-size: 1.1rem;
-            }
-            .profile-pic {
-                width: 120px;
-                height: 120px;
-                font-size: 2.8rem;
-            }
-            .time-value {
-                font-size: 1.5rem;
-            }
-            .time-label {
-                font-size: 0.6rem;
-            }
-            .time-separator {
-                font-size: 1rem;
+
+        @media (max-width: 768px) {
+            .glitch {
+                font-size: 3rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts" id="hearts-container"></div>
-    
-    <div class="page-container">
-        <!-- Hero Section -->
-        <section class="hero-header">
-            <div class="parallax-bg"></div>
-            <h1 class="main-title">2 Meses <span style="display: inline-block; animation: bounce 2s infinite;">♥</span></h1>
-            <h2 class="subtitle">Iago & Tati - Nosso amor</h2>
-            <div class="profile-pic">I+T</div>
-            
-            <!-- CONTADOR DE TEMPO INTEGRADO -->
-            <div class="love-timer">
-                <div class="time-unit">
-                    <div class="time-value" id="days">00</div>
-                    <div class="time-label">Dias</div>
-                </div>
-                <div class="time-separator">:</div>
-                <div class="time-unit">
-                    <div class="time-value" id="hours">00</div>
-                    <div class="time-label">Horas</div>
-                </div>
-                <div class="time-separator">:</div>
-                <div class="time-unit">
-                    <div class="time-value" id="minutes">00</div>
-                    <div class="time-label">Min</div>
-                </div>
-                <div class="time-separator">:</div>
-                <div class="time-unit">
-                    <div class="time-value" id="seconds">00</div>
-                    <div class="time-label">Seg</div>
-                </div>
-            </div>
-            <div class="start-date">Desde 28/01/2025 às 05:50</div>
-        </section>
-        
-        <!-- Timeline Section -->
-        <section class="timeline-section">
-            <h3 class="timeline-title">Nossa Linha do Tempo</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">01/01</div>
-                    <div class="timeline-content">Primeiro dia do ano, primeiro dia da nossa história. Quando nossos olhares se cruzaram e algo mágico começou</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">28/01</div>
-                    <div class="timeline-content">O dia mais feliz - Quando você disse "sim" e começamos essa linda jornada juntos</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">28/03</div>
-                    <div class="timeline-content">2 meses de namoro - Celebrando cada momento ao seu lado</div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Message Section -->
-        <section class="message-section">
-            <div class="message-container">
-                <div class="message-text">
-                    <p>Minha <span class="highlight">Riki</span>,</p>
-                    
-                    <p>Parece que foi ontem que começamos essa aventura chamada amor, e já se passaram <span class="highlight">dois meses</span> desde que você disse "sim" para esse gato aqui. Dois meses de risadas, de conversas que nunca acabam, de olhares que dizem mais que mil palavras.</p>
-                    
-                    <div class="growth-text">
-                        Desde aquele primeiro dia do ano, você transformou minha vida. Cada momento ao seu lado me inspira a ser melhor, a crescer, a me superar. Você acende em mim uma chama que eu nem sabia que existia - a vontade de me tornar o homem que você merece.
-                    </div>
-                    
-                    <p>São <span class="highlight">60 dias</span> de descobrir que o amor não é só aquilo que vemos nos filmes - é melhor, porque é real. É você me mandando mensagem no meio do dia só para dizer que está com saudade. É eu ficar bobo quando você ri daquela minha piada sem graça.</p>
-                    
-                    <div class="growth-text">
-                        Você me ensinou que amor verdadeiro não é só sentir borboletas no estômago, mas é querer voar mais alto. É olhar para o futuro e ver que, com você ao meu lado, tudo vale a pena. Cada dia é uma nova chance de te fazer feliz e de me tornar uma versão melhor de mim mesmo.
-                    </div>
-                    
-                    <p>Obrigado por ser essa pessoa incrível que faz meu coração bater mais forte. Obrigado por cada "bom dia", cada "tô com saudade", cada momento que você escolhe passar ao meu lado.</p>
-                    
-                    <p>Hoje celebramos <span class="highlight">2 meses</span>, mas o que eu realmente quero comemorar é ter encontrado você. Porque no fim, não são os dias que contam, mas sim o amor que a gente coloca em cada um deles.</p>
-                    <div class="signature">사랑해요</div>
-                    <div class="signature">Iago</div>
-                </div>
-            </div>
-        </section>
-        
-        <footer class="footer">
-            Criado com ♥ para a mais especial do universo
-        </footer>
-        
-        <button class="love-button" id="loveButton">♥</button>
+    <div class="glitch">
+        FORA DO AR
+        <span aria-hidden="true">FORA DO AR</span>
+        <span aria-hidden="true">FORA DO AR</span>
     </div>
-    
-    <script>
-        // Cria corações flutuantes
-        function createHearts() {
-            const container = document.getElementById('hearts-container');
-            const heart = document.createElement('div');
-            heart.className = 'heart-particle';
-            heart.innerHTML = '♥';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-            container.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-        
-        // Cria vários corações
-        setInterval(createHearts, 300);
-        
-        // Efeito de parallax
-        document.addEventListener('mousemove', function(e) {
-            const parallax = document.querySelector('.parallax-bg');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            parallax.style.transform = 'translate(-' + x * 30 + 'px, -' + y * 30 + 'px)';
-        });
-        
-        // Botão de amor
-        const loveButton = document.getElementById('loveButton');
-        loveButton.addEventListener('click', function() {
-            // Explosão de corações
-            for (let i = 0; i < 30; i++) {
-                setTimeout(() => {
-                    createHearts();
-                }, i * 100);
-            }
-            
-            // Efeito visual no botão
-            this.style.transform = 'scale(1.3)';
-            this.style.boxShadow = '0 0 30px rgba(255,62,108,0.8)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-                this.style.boxShadow = '0 5px 20px rgba(255,62,108,0.5)';
-            }, 300);
-        });
-        
-        // CONTADOR DE TEMPO PRECISO
-        function updateLoveTimer() {
-            const startDate = new Date(2025, 0, 28, 5, 50, 0); // 28/01/2025 05:50
-            const now = new Date();
-            const diff = now - startDate;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        // Iniciar e atualizar a cada segundo
-        updateLoveTimer();
-        setInterval(updateLoveTimer, 1000);
-        
-        // Animação ao rolar
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateOnScroll = function() {
-                const elements = document.querySelectorAll('.main-title, .subtitle, .profile-pic, .love-timer');
-                elements.forEach(el => {
-                    const elementPosition = el.getBoundingClientRect().top;
-                    const screenPosition = window.innerHeight / 1.3;
-                    
-                    if (elementPosition < screenPosition) {
-                        el.style.opacity = '1';
-                        el.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll();
-        });
-    </script>
+    <div class="scanlines"></div>
+    <div class="credits">Por Iago · 2025</div>
 </body>
 </html>
